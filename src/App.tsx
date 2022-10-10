@@ -1,6 +1,5 @@
 import "./App.css";
 import Home from "./Home";
-import Add from "./Add";
 import AddPokemon from "./AddPokemon";
 import Navbar from "./components/navbar";
 import { Routes, Route } from "react-router-dom";

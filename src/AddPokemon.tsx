@@ -16,6 +16,10 @@ export const AddPokemon = (): JSX.Element => {
     poid: poid,
     type: type,
   };
+    
+    const addType = (type:string) => {
+        setType(type)        
+   }
 
   return (
     <div>
@@ -26,7 +30,7 @@ export const AddPokemon = (): JSX.Element => {
           <input
             type="text"
             onChange={(e: any) => {
-              setData(e.target.value);
+              setName(e.target.value);
             }}
           />
         </div>
@@ -34,7 +38,7 @@ export const AddPokemon = (): JSX.Element => {
           <label>Description</label>
           <textarea
             onChange={(e: any) => {
-              setData(e.target.value);
+              setDescription(e.target.value);
             }}
           />
         </div>
@@ -43,7 +47,7 @@ export const AddPokemon = (): JSX.Element => {
           <input
             type="text"
             onChange={(e: any) => {
-              setData(e.target.value);
+              setImage(e.target.value);
             }}
           />
         </div>
@@ -52,7 +56,7 @@ export const AddPokemon = (): JSX.Element => {
           <input
             type="text"
             onChange={(e: any) => {
-              setData(e.target.value);
+              setTaille(e.target.value);
             }}
           />{" "}
           cm
@@ -62,17 +66,17 @@ export const AddPokemon = (): JSX.Element => {
           <input
             type="text"
             onChange={(e: any) => {
-              setData(e.target.value);
+              setPoid(e.target.value);
             }}
           />
           kg
         </div>
         <div>
           <label>Type</label>
-          <input type="radio" name="type" /> Feu
-          <input type="radio" name="type" /> Glace
-          <input type="radio" name="type" /> Électricité
-          <input type="radio" name="type" /> Vent
+                  <button onClick={() => { addType("feu") }}>Feu</button>
+                  <button onClick={() => { addType("Glace") }}>Glace</button>
+                  <button onClick={() => { addType("Electricité") }}>Électricité</button>
+                  <button onClick={() => { addType("Vent") }}>Vent</button>
         </div>
         <button>Enregistrer</button>
       </form>
